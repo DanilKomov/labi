@@ -1,6 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
-
+#include <ctype.h>
 
 int main(int argc, char *argv[])
 {
@@ -8,15 +8,15 @@ int main(int argc, char *argv[])
     char b;
 
     if (argc <= 1) return 0;
-    if (sscanf(argv[1], "%f", &a) == 1)
+    sscanf(argv[1], "%f", &a);
     if (argc == 3) b = argv[2][0];
-    else {
-           if (argc == 2)
-            n = a;
-         }
+    else if (argc == 2)
+    {
+        n = a;
+    }
             if (argc ==3)
             {
-              b = tolower(b);
+              b = (char)tolower(b);
               switch (b)
                {
                 case 'c':
@@ -27,7 +27,7 @@ int main(int argc, char *argv[])
                     printf("%.2fK\n", a+273 );
                     }
                 else
-                    printf ("The temperature is equal to absolute 0\n");
+                    printf ("The temperature is equal to absolute zero\n");
                 break;
                 }
                 case 'f':
@@ -38,7 +38,7 @@ int main(int argc, char *argv[])
                     printf("%.2fK\n", (a-32)*5/9+273 );
                     }
                 else
-                    printf ("The temperature is equal to absolute 0\n");
+                    printf ("The temperature is equal to absolute zero\n");
                 }
                 break;
                 case 'k':
@@ -49,7 +49,7 @@ int main(int argc, char *argv[])
                     printf("%.2fF\n", (a-273)*9/5+32 );
                     }
                 else
-                    printf ("The temperature is equal to absolute 0\n");
+                    printf ("The temperature is equal to absolute zero\n");
                 }
                 break;
                }
@@ -64,7 +64,7 @@ int main(int argc, char *argv[])
                     printf("%.2fK\n", n+273 );
                 }
                 else
-                    printf ("C = The temperature is equal to absolute 0\n");
+                    printf ("C = The temperature is equal to absolute zero\n");
                 if(n > -459.67)
                 {
                     printf("%.2fF\n ", n);
@@ -72,7 +72,7 @@ int main(int argc, char *argv[])
                     printf("%.2fK\n", (n-32)*5/9+273 );
                 }
                 else
-                    printf ("F = The temperature is equal to absolute 0\n");
+                    printf ("F = The temperature is equal to absolute zero\n");
                 if (n>=0)
                 {
                     printf("%.2fK\n ", n);
@@ -80,7 +80,7 @@ int main(int argc, char *argv[])
                     printf("%.2fF\n", (n-273)*9/5+32 );
                 }
                 else
-                    printf ("K = The temperature is equal to absolute 0\n");
+                    printf ("K = The temperature is equal to absolute zero\n");
             }
 
 return 0;
